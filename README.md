@@ -40,9 +40,8 @@ getCustomerOrder(id: string) { }\
 removeCustomerOrder(id: string) { }\
 updateCarSet(set: object) { }\
 }
-```
  |
-
+```
 From the code above, If the head of each department changes the logic, it will affect the the other department, or lead to bad nested statement.
 
 👍Good Practice
