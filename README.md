@@ -408,9 +408,9 @@ this.httpConnection.request(url, 'POST');\
 Conclusion
 ----------
 
-In this post, we started with the history of SOLID principles, and then we tried to explain each principle with a clear understanding of the why's and how's of each principle. We even refactored a simple example to show the bad and good SOLID principles.
+In this article, we started with the history of SOLID principles, and then we tried to explain each principle with a clear understanding of the why's and how's of each principle. We even refactored a simple example to show the bad and good SOLID principles.
 
-For all programmers, we suggest keeping these principles in mind while designing, writing, and refactoring codes so that your code will be much more maintainable, scalable, testable, and reusable.  Practicing these principles can feel overwhelming at first, but regularly working with them and understanding the differences makes this principle more familiar. You don't want a situation where you work on a project and in the next few months or years you are struggling to understand your own code so for the sake of your code and for the sake of other coders learn these principles, love these principles, and live these principles.
+For all programmers, we suggest keeping these principles in mind while designing, writing, and refactoring codes so that your code will be much more maintainable, scalable, testable, and reusable. Practicing these principles can feel overwhelming at first, but regularly working with them and understanding the differences makes this principle more familiar. You don't want a situation where you work on a project and in the next few months or years you are struggling to understand your own code so for the sake of your code and for the sake of other coders learn these principles, love these principles, and live these principles.
 
 REFERENCES:
 
