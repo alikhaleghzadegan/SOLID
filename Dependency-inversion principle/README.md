@@ -58,3 +58,5 @@ class Http {
 	}
 }
 ```
+
+Reference: https://github.com/YauhenKavalchuk/useful/blob/main/solid.md
