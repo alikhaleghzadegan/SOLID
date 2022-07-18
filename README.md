@@ -29,7 +29,7 @@ Few important things to note:
 For instance in an auto company, where there exit different departments. It is advisable to split up tasks accordingly to avoid confusion, and how best can this be done?? Split based on responsibilities by assigning customer related responsibility to the same class, model related responsibility to the same class etc. see below codes for further clarification
 
 👎Bad Practice:
-
+```
 |\
 class  Auto {\
 constructor(model: string) { }\
@@ -40,7 +40,7 @@ getCustomerOrder(id: string) { }\
 removeCustomerOrder(id: string) { }\
 updateCarSet(set: object) { }\
 }
-
+```
  |
 
 From the code above, If the head of each department changes the logic, it will affect the the other department, or lead to bad nested statement.
@@ -48,7 +48,7 @@ From the code above, If the head of each department changes the logic, it will a
 👍Good Practice
 
 |
-
+```
 class  Auto {\
  constructor(model: string) { }\
     getCarModel() { }\
@@ -64,7 +64,7 @@ class  CustomerAuto {\
 class  AutoDB {\
     updateCarSet(set: object) { }\
 }
-
+```
  |
 
 The above structure obeys the Single Responsibility Principle and every class is responsible for one aspect. Great!
@@ -108,7 +108,7 @@ In one sentence: don't put too much code in a class and avoid too many if-else o
 👎Bad:
 
 |
-
+```
 class Auto {\
 constructor(public model: string) { }\
 getCarModel() { }\
@@ -130,13 +130,13 @@ default: return 'No Auto Price';\
 }
 
 getPrice(shop);
-
+```
  |
 
 👍Good:
 
 |
-
+```
 abstract class CarPrice {\
 abstract getPrice(): string;\
 }
@@ -172,7 +172,7 @@ auto[i].getPrice();\
 }
 
 getPrice(shop);
-
+```
  |
 
 3\. Liskov substitution principle (Ali Khaleghzadegan)
@@ -188,7 +188,7 @@ However, a Square does not need both height and width member variables. Yet it w
 One solution is to override SetWidth and SetHeight so that when someone sets the width of a Square object, its height will change correspondingly. And when someone sets its height, the width will change with it. Thus, the invariants of the Square remain intact.
 
 |
-
+```
 class  Rectangle {\
 constructor(public width: number, public height: number) {}
 
@@ -219,19 +219,19 @@ this.width = height;\
 this.height = height;\
 }\
 }
-
+```
  |
 
 But what is wrong with the above code? Just take a look a the below function:
 
 |
-
+```
 function  area(rectangle: Rectangle) {\
     rectangle.setWidth(5);\
     rectangle.setHeight(4);\
  return rectangle.getWidth() * rectangle.getHeight();\
 }
-
+```
  |
 
 We expect to have 20 as the return value when we pass a Rectangle or Square object to the above function. Right? But the truth is that a Square object makes this function corrupted! (We assumed that the height and width vary independently. Which is not the case for a Square)
@@ -271,7 +271,7 @@ If the interface for ClientA needs to change, ClientB and ClientC will remain un
 Take a look at the following example .
 
 |
-
+```
 interface ReportService {\
   createEmployeeReport(employeeId: string): Report;\
   createCustomerReport(customerId: string): Report;\
@@ -291,7 +291,7 @@ throw new Error("Method not implemented.");\
 throw new Error("Method not implemented.");\
   }\
 }
-
+```
  |
 
 there is an issue?
@@ -303,7 +303,7 @@ The class implementing the interface actually doesn't want to implement two of t
 One way to fix the issue can now be to actually pull the interface apart, as shown below.
 
 |
-
+```
 interface EmployeeReportService {\
   createEmployeeReport(employeeId: string): Report;\
 }\
@@ -320,7 +320,7 @@ class EmployeeReportServiceImplementation implements EmployeeReportService {\
 }
 
 // and so on...            
-
+```
  |
 
 -  What are we trying to prevent?
@@ -366,7 +366,7 @@ Code example:
 👎Bad:
 
 |
-
+```
 class  xmlHttpRequestService { }
 
 // Low level\
@@ -386,13 +386,13 @@ post(url: string) {\
 this.xmlHttpService.request(url, 'POST');\
 }\
 }
-
+```
  |
 
 👍Good:
 
 |
-
+```
 class  xmlHttpRequestService {\
 open() { }\
 send() { }\
@@ -424,7 +424,7 @@ post(url: string) {\
 this.httpConnection.request(url, 'POST');\
 }\
 }
-
+```
  |
 
 Conclusion
